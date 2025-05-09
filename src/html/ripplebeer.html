@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Beer Co.</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../../config/site.webmanifest">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Ripple Beer Co.">
+    <meta property="og:description" content="Craft beer that makes waves. Join our community to receive updates and exclusive offers.">
+    <meta property="og:image" content="../../assets/images/logos/RippleBeerCoPlain.png">
+    <meta property="og:url" content="https://ripplebeer.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ripple Beer Co.">
+    <meta name="twitter:description" content="Craft beer that makes waves. Join our community to receive updates and exclusive offers.">
+    <meta name="twitter:image" content="../../assets/images/logos/RippleBeerCoPlain.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .age-verification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .age-verification-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: #ffffff;
+            color: #333;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #f4b942;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background: #f4b942;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        button:hover {
+            background: #e5aa33;
+            transform: translateY(-2px);
+        }
+
+        #form-message {
+            color: #f4b942;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f4b942;
+            transform: translateY(-2px);
+        }
+
+        .instagram-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .social-links {
+                position: static;
+                margin-top: 2rem;
+                justify-content: center;
+            }
+
+            .social-links a {
+                font-size: 1rem;
+            }
+
+            .instagram-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="age-verification" id="ageVerification">
+        <div class="age-verification-content">
+            <h2>Age Verification</h2>
+            <p>Are you 21 or older?</p>
+            <div style="margin-top: 20px;">
+                <button onclick="verifyAge(true)">Yes, I'm 21+</button>
+                <button onclick="verifyAge(false)" style="background: #ddd;">No</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="content">
+            <img src="../../assets/images/logos/RippleBeerCoPlain.png" alt="Ripple Beer Co. Logo" class="logo">
+            <h1>Ripple Beer Co.</h1>
+            <p class="subtitle">Craft beer that makes waves. Join our community to receive updates and exclusive offers.</p>
+            <form class="email-form" id="email-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Join the Wave</button>
+            </form>
+            <div id="form-message" style="display: none;"></div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/ripplebeerco" target="_blank">
+                <svg class="instagram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function verifyAge(isOver21) {
+            if (isOver21) {
+                document.getElementById('ageVerification').style.display = 'none';
+            } else {
+                window.location.href = 'https://www.responsibility.org/';
+            }
+        }
+
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const messageDiv = document.getElementById('form-message');
+            const submitButton = document.querySelector('button[type="submit"]');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            setTimeout(() => {
+                messageDiv.textContent = "Thanks for joining! We'll keep you updated.";
+                messageDiv.style.display = "block";
+                document.getElementById('email-form').reset();
+                
+                submitButton.disabled = false;
+                submitButton.textContent = 'Join the Wave';
+                
+                console.log('New subscriber:', email);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
