@@ -57,6 +57,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-- Website: [ripplebeer.com](https://ripplebeer.com)
+- Website: [ripplebeer.co](https://ripplebeer.co)
 - Instagram: [@ripplebeerco](https://www.instagram.com/ripplebeerco)
 - Email: ripplebeerco@gmail.com 
